@@ -11,6 +11,8 @@
 		68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A572888FC4400C0D8F9 /* ContentView.swift */; };
 		68C66A5A2888FC4600C0D8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C66A592888FC4600C0D8F9 /* Assets.xcassets */; };
 		68C66A5D2888FC4600C0D8F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C66A5C2888FC4600C0D8F9 /* Preview Assets.xcassets */; };
+		68C66A6528890F2500C0D8F9 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A6428890F2500C0D8F9 /* Dashboard.swift */; };
+		68C66A6828893F0000C0D8F9 /* GeneralComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A6728893F0000C0D8F9 /* GeneralComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		68C66A572888FC4400C0D8F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68C66A592888FC4600C0D8F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68C66A5C2888FC4600C0D8F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		68C66A6428890F2500C0D8F9 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		68C66A6728893F0000C0D8F9 /* GeneralComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		68C66A542888FC4400C0D8F9 /* BeLance */ = {
 			isa = PBXGroup;
 			children = (
+				68C66A6328890EF600C0D8F9 /* Views */,
 				68C66A552888FC4400C0D8F9 /* BeLanceApp.swift */,
 				68C66A572888FC4400C0D8F9 /* ContentView.swift */,
 				68C66A592888FC4600C0D8F9 /* Assets.xcassets */,
@@ -65,6 +70,23 @@
 				68C66A5C2888FC4600C0D8F9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		68C66A6328890EF600C0D8F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				68C66A6628893EEE00C0D8F9 /* Components */,
+				68C66A6428890F2500C0D8F9 /* Dashboard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		68C66A6628893EEE00C0D8F9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				68C66A6728893F0000C0D8F9 /* GeneralComponents.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */,
+				68C66A6528890F2500C0D8F9 /* Dashboard.swift in Sources */,
+				68C66A6828893F0000C0D8F9 /* GeneralComponents.swift in Sources */,
 				68C66A562888FC4400C0D8F9 /* BeLanceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
