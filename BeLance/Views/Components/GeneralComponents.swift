@@ -7,8 +7,17 @@
 
 import SwiftUI
 
+
+struct BackgroundImageView: View {
+	var body: some View {
+		Image("background")
+			.resizable()
+			.edgesIgnoringSafeArea(.all)
+	}
+}
+
 struct UserInfo: View {
-    var body: some View {
+	var body: some View {
 		HStack() {
 			Ellipse()
 				.fill(Color(red: 0.85, green: 0.85, blue: 0.85))
@@ -18,56 +27,120 @@ struct UserInfo: View {
 				Text("Welcome Back")
 					.fontWeight(.medium)
 					.font(.caption)
-					.foregroundColor(Color("TextColorSecondary"))
+					.foregroundColor(Color("secondary"))
 				Text("Rahmat Afriyanton")
 					.fontWeight(.bold)
 					.font(.title3)
-					.foregroundColor(Color("TextColorDark"))
+					.foregroundColor(Color("dark"))
 			}
-		}.frame(width: 360, alignment: .topLeading)
-    }
+		}.frame(width: 370, alignment: .topLeading)
+	}
 }
 
+//struct UserInfo_Previews: PreviewProvider {
+//	static var previews: some View {
+//		UserInfo()
+//	}
+//}
 
-struct CustomButtonText: View {
+//Card Alert
+struct CardAlertView: View {
+	var type: String
 	var text: String
-	var x_padding: CGFloat = 50
+	var duration: Int
+	@Binding public var isCheckin: Bool
 	var body: some View {
-		Text(text)
-			.fontWeight(.medium)
-			.font(.subheadline)
-			.padding(.vertical, 10)
-			.padding(.horizontal, x_padding)
+		VStack(alignment: .leading, spacing: 15) {
+			HStack() {
+				Text("\(type == "success" ? "Good Job!" : "Reminder")")
+					.fontWeight(.semibold)
+					.font(.title3)
+					.foregroundColor(Color("dark"))
+					.frame(alignment: .topLeading)
+				Spacer()
+
+				Text("\(duration) mins")
+					.font(.subheadline)
+					.foregroundColor(Color("secondary"))
+			}
+
+			Text(text)
+				.lineLimit(nil)
+				.foregroundColor(Color("secondary"))
+				.font(.body)
+				.frame(alignment: .topLeading)
+
+			Button(action: {
+				isCheckin.toggle()
+			}) {
+				CardButtonView(
+					text: "\(type == "success" ? "Check out" : "Check in")",
+					color: Color("\(type == "success" ? "btnSuccess" : "btnDanger")"))
+			}
+		}
+		.padding(.horizontal, 22)
+		.padding(.vertical, 22)
+		.background(Color("\(type == "success" ? "cardSuccess" : "cardDanger")"))
+		.cornerRadius(15)
+		.frame(width: UIConst.maxFrameWidth, height: 190)
+
 	}
 }
 
 
-struct HeadingText: View {
+
+// List View Cell
+struct ListCellView: View {
 	var title: String
 	var subTitle: String = ""
-
+	var withProgressBar = false
 	var body: some View {
+		HStack(alignment: .center, spacing: 0) {
+			
+			RoundedRectangle(cornerRadius: UIConst.cornerRadius)
+				.fill(Color("dark").opacity(0.75))
+				.frame(width: 20)
 
-		VStack(spacing: 0) {
-			if subTitle != "" {
-				Text(subTitle)
+			VStack(alignment: .leading, spacing: 4) {
+
+				Text(title)
+					.font(.callout)
+					.fontWeight(.semibold)
+					.foregroundColor(Color("dark"))
+					.frame(maxWidth: .infinity, alignment: .topLeading)
 					.lineLimit(nil)
-					.font(.subheadline)
-					.foregroundColor(Color("TextColorSecondary"))
-					.frame(maxWidth: .infinity, minHeight: 300, alignment: .topLeading)
-			}
 
-			Text(title)
-				.fontWeight(.bold)
-				.font(.title)
-				.foregroundColor(Color("TextColorDark"))
-				.frame(width: 360, alignment: .topLeading)
-		}
+				if (subTitle != "") {
+					Text("on \(subTitle)")
+						.font(.caption)
+						.foregroundColor(Color("secondary"))
+				}
+
+				if (withProgressBar) {
+					ZStack(alignment: .leading) {
+						RoundedRectangle (cornerRadius: 15)
+							.fill(Color("secondary"))
+							.frame(width: 310, height: 5)
+
+						RoundedRectangle (cornerRadius: 15)
+							.fill(Color("secondary"))
+							.frame(width: 100, height: 5)
+					}.padding(.top, 5)
+				}
+			}
+			.padding()
+			.frame(width: 340)
+			.background(Color.white)
+			.offset(x: -10)
+			RoundedRectangle(cornerRadius: UIConst.cornerRadius).fill(.white)
+				.frame(width: 30)
+				.offset(x:-20)
+		}.offset(x:10)
 	}
 }
 
-struct UserInfo_Previews: PreviewProvider {
-    static var previews: some View {
-		UserInfo()
-    }
+struct ListCellView_Previews: PreviewProvider {
+	static var previews: some View {
+		ListCellView(title: "What is UIKit", withProgressBar: true)
+	}
 }
