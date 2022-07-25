@@ -11,8 +11,14 @@
 		68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A572888FC4400C0D8F9 /* ContentView.swift */; };
 		68C66A5A2888FC4600C0D8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C66A592888FC4600C0D8F9 /* Assets.xcassets */; };
 		68C66A5D2888FC4600C0D8F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C66A5C2888FC4600C0D8F9 /* Preview Assets.xcassets */; };
-		68C66A6528890F2500C0D8F9 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A6428890F2500C0D8F9 /* Dashboard.swift */; };
+		68C66A6528890F2500C0D8F9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A6428890F2500C0D8F9 /* DashboardView.swift */; };
 		68C66A6828893F0000C0D8F9 /* GeneralComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A6728893F0000C0D8F9 /* GeneralComponents.swift */; };
+		68D9FE34288CDE8400A36CBB /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE33288CDE8400A36CBB /* Button.swift */; };
+		68D9FE37288CE3BE00A36CBB /* UIConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE36288CE3BE00A36CBB /* UIConst.swift */; };
+		68D9FE39288CE73400A36CBB /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE38288CE73400A36CBB /* Typography.swift */; };
+		68D9FE3B288D7F2400A36CBB /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3A288D7F2400A36CBB /* AppUtils.swift */; };
+		68D9FE3D288D8D9700A36CBB /* MyJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */; };
+		68D9FE3F288DA8BA00A36CBB /* DetailJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +27,14 @@
 		68C66A572888FC4400C0D8F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68C66A592888FC4600C0D8F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68C66A5C2888FC4600C0D8F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		68C66A6428890F2500C0D8F9 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		68C66A6428890F2500C0D8F9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		68C66A6728893F0000C0D8F9 /* GeneralComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralComponents.swift; sourceTree = "<group>"; };
+		68D9FE33288CDE8400A36CBB /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		68D9FE36288CE3BE00A36CBB /* UIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConst.swift; sourceTree = "<group>"; };
+		68D9FE38288CE73400A36CBB /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		68D9FE3A288D7F2400A36CBB /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
+		68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJourneyView.swift; sourceTree = "<group>"; };
+		68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJourney.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				68C66A6328890EF600C0D8F9 /* Views */,
+				68D9FE35288CE3A400A36CBB /* Utils */,
+				68C66A5B2888FC4600C0D8F9 /* Preview Content */,
+				68C66A592888FC4600C0D8F9 /* Assets.xcassets */,
 				68C66A552888FC4400C0D8F9 /* BeLanceApp.swift */,
 				68C66A572888FC4400C0D8F9 /* ContentView.swift */,
-				68C66A592888FC4600C0D8F9 /* Assets.xcassets */,
-				68C66A5B2888FC4600C0D8F9 /* Preview Content */,
 			);
 			path = BeLance;
 			sourceTree = "<group>";
@@ -76,7 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				68C66A6628893EEE00C0D8F9 /* Components */,
-				68C66A6428890F2500C0D8F9 /* Dashboard.swift */,
+				68C66A6428890F2500C0D8F9 /* DashboardView.swift */,
+				68D9FE40288DAC3D00A36CBB /* Journey */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,8 +99,28 @@
 			isa = PBXGroup;
 			children = (
 				68C66A6728893F0000C0D8F9 /* GeneralComponents.swift */,
+				68D9FE33288CDE8400A36CBB /* Button.swift */,
+				68D9FE38288CE73400A36CBB /* Typography.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		68D9FE35288CE3A400A36CBB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				68D9FE36288CE3BE00A36CBB /* UIConst.swift */,
+				68D9FE3A288D7F2400A36CBB /* AppUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		68D9FE40288DAC3D00A36CBB /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */,
+				68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */,
+			);
+			path = Journey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,8 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D9FE3D288D8D9700A36CBB /* MyJourneyView.swift in Sources */,
+				68D9FE39288CE73400A36CBB /* Typography.swift in Sources */,
+				68D9FE34288CDE8400A36CBB /* Button.swift in Sources */,
+				68D9FE3F288DA8BA00A36CBB /* DetailJourney.swift in Sources */,
+				68D9FE37288CE3BE00A36CBB /* UIConst.swift in Sources */,
+				68D9FE3B288D7F2400A36CBB /* AppUtils.swift in Sources */,
 				68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */,
-				68C66A6528890F2500C0D8F9 /* Dashboard.swift in Sources */,
+				68C66A6528890F2500C0D8F9 /* DashboardView.swift in Sources */,
 				68C66A6828893F0000C0D8F9 /* GeneralComponents.swift in Sources */,
 				68C66A562888FC4400C0D8F9 /* BeLanceApp.swift in Sources */,
 			);
