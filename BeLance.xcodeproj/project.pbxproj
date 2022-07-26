@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6842C393288E4A52000FF133 /* MyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842C392288E4A52000FF133 /* MyScheduleView.swift */; };
 		68C66A562888FC4400C0D8F9 /* BeLanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A552888FC4400C0D8F9 /* BeLanceApp.swift */; };
 		68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A572888FC4400C0D8F9 /* ContentView.swift */; };
 		68C66A5A2888FC4600C0D8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C66A592888FC4600C0D8F9 /* Assets.xcassets */; };
@@ -19,9 +20,11 @@
 		68D9FE3B288D7F2400A36CBB /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3A288D7F2400A36CBB /* AppUtils.swift */; };
 		68D9FE3D288D8D9700A36CBB /* MyJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */; };
 		68D9FE3F288DA8BA00A36CBB /* DetailJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */; };
+		68E10196288EA803001E78B4 /* AddScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E10195288EA803001E78B4 /* AddScheduleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6842C392288E4A52000FF133 /* MyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleView.swift; sourceTree = "<group>"; };
 		68C66A522888FC4400C0D8F9 /* BeLance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeLance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C66A552888FC4400C0D8F9 /* BeLanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeLanceApp.swift; sourceTree = "<group>"; };
 		68C66A572888FC4400C0D8F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		68D9FE3A288D7F2400A36CBB /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJourneyView.swift; sourceTree = "<group>"; };
 		68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJourney.swift; sourceTree = "<group>"; };
+		68E10195288EA803001E78B4 /* AddScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				68C66A6628893EEE00C0D8F9 /* Components */,
-				68C66A6428890F2500C0D8F9 /* DashboardView.swift */,
 				68D9FE40288DAC3D00A36CBB /* Journey */,
+				68E10194288EA7DC001E78B4 /* Schedule */,
+				68C66A6428890F2500C0D8F9 /* DashboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +126,15 @@
 				68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */,
 			);
 			path = Journey;
+			sourceTree = "<group>";
+		};
+		68E10194288EA7DC001E78B4 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				6842C392288E4A52000FF133 /* MyScheduleView.swift */,
+				68E10195288EA803001E78B4 /* AddScheduleView.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +212,10 @@
 				68D9FE34288CDE8400A36CBB /* Button.swift in Sources */,
 				68D9FE3F288DA8BA00A36CBB /* DetailJourney.swift in Sources */,
 				68D9FE37288CE3BE00A36CBB /* UIConst.swift in Sources */,
+				68E10196288EA803001E78B4 /* AddScheduleView.swift in Sources */,
 				68D9FE3B288D7F2400A36CBB /* AppUtils.swift in Sources */,
 				68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */,
+				6842C393288E4A52000FF133 /* MyScheduleView.swift in Sources */,
 				68C66A6528890F2500C0D8F9 /* DashboardView.swift in Sources */,
 				68C66A6828893F0000C0D8F9 /* GeneralComponents.swift in Sources */,
 				68C66A562888FC4400C0D8F9 /* BeLanceApp.swift in Sources */,

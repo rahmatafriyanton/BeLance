@@ -16,7 +16,7 @@ struct LabelTextView: View {
 			.lineLimit(nil)
 			.font(.callout)
 			.foregroundColor(Color("secondary"))
-			.frame(width: UIConst.maxFrameWidth, alignment: .topLeading)
+			.frame(maxWidth: UIConst.maxFrameWidth, alignment: .topLeading)
 
 	}
 }

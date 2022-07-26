@@ -10,5 +10,5 @@ import SwiftUI
 
 struct UIConst {
 	static var cornerRadius: CGFloat = 15
-	static var maxFrameWidth: CGFloat = 370
+	static var maxFrameWidth: CGFloat = 360
 }

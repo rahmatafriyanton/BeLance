@@ -79,3 +79,39 @@ struct CardButtonView: View {
 //		CardButtonView(text: "Check in", color: Color("btnDanger"))
 //	}
 //}
+
+// Toolbar Button
+struct ToolBarButton: View {
+	var image: String
+	var body: some View {
+		Image(systemName: image)
+			.resizable()
+			.frame(width: 17, height: 17)
+			.foregroundColor(Color("dark"))
+	}
+}
+
+struct ToolBarButton_Previews: PreviewProvider {
+	static var previews: some View {
+		ToolBarButton(image: "plus")
+	}
+}
+
+struct DefaultButton: View {
+	var text: String
+	var fgColor: Color
+	var bgColor: Color
+	var width: CGFloat
+	var height: CGFloat = 37
+	var body: some View {
+		ZStack {
+			RoundedRectangle(cornerRadius: UIConst.cornerRadius)
+				.fill(bgColor)
+				.frame(width: width, height: height)
+			Text("\(text)")
+				.fontWeight(.regular)
+				.font(.callout)
+				.foregroundColor(fgColor)
+		}.frame(alignment: .center)
+	}
+}
