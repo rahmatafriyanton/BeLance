@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct DetailJourney: View {
-    var body: some View {
-			ZStack {
-				BackgroundImageView()
-
-				ScrollView {
-					VStack(spacing: 15) {
-						ListCellView(
-							title: "Be an iOS Developer"
-						)
-
-					}
-				}.padding(.top, 35)
-					.navigationTitle("Be an iOS Developer")
+	var body: some View {
+		ZStack {
+			BackgroundImageView()
+			
+			ScrollView {
+				VStack(spacing: 15) {
+					ListCellView(
+						title: "Be an iOS Developer"
+					)
+				}
 			}
-    }
+			.padding(.top, 35)
+			.navigationTitle("Be an iOS Developer")
+		}
+	}
 }
 
 struct DetailJourney_Previews: PreviewProvider {

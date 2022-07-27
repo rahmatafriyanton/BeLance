@@ -144,3 +144,58 @@ struct ListCellView_Previews: PreviewProvider {
 		ListCellView(title: "What is UIKit", withProgressBar: true)
 	}
 }
+
+
+struct TimeScheduleCell: View {
+	var time: String
+	var kind: String
+	@Binding var isSelected: Bool
+	var body: some View {
+		Divider().frame(width: UIConst.maxFrameWidth)
+		Toggle(isOn: $isSelected) {
+			VStack(alignment: .leading, spacing: 0) {
+				Text(time)
+					.fontWeight(.medium)
+					.font(.largeTitle)
+					.foregroundColor(Color("dark"))
+
+				Text(kind)
+					.fontWeight(.medium)
+					.font(.callout)
+					.foregroundColor(Color("dark").opacity(0.75))
+			}
+		}.frame(width: UIConst.maxFrameWidth)
+			.padding(.horizontal)
+	}
+}
+
+
+struct CustomTabBar: View {
+	var tabBarImageName: [String]
+	@Binding var selectedTab: Int
+	var body: some View {
+		HStack {
+			ZStack {
+				Color("dark").opacity(0.25)
+					.cornerRadius(15)
+					.offset(y:-1)
+				Color.white
+					.cornerRadius(15)
+
+				HStack {
+					ForEach (0..<tabBarImageName.count) { num in
+						Spacer()
+						Button(action: {
+							selectedTab = num
+						}, label: {
+							Image(systemName: tabBarImageName[num])
+								.foregroundColor(selectedTab == num ? Color("dark") : Color("dark").opacity(0.50))
+								.frame(width: 20, height: 20)
+						})
+						Spacer()
+					}
+				}
+			}
+		}.frame(height: 65)
+	}
+}
