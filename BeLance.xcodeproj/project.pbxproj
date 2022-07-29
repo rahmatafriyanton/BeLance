@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6842C393288E4A52000FF133 /* MyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842C392288E4A52000FF133 /* MyScheduleView.swift */; };
+		6846AE6228915EBD00A5AF89 /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846AE6128915EBD00A5AF89 /* JourneyModel.swift */; };
+		6846AE692891765200A5AF89 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846AE682891765200A5AF89 /* AppConst.swift */; };
+		6846AE6B2892288500A5AF89 /* DetailJourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846AE6A2892288500A5AF89 /* DetailJourneyModel.swift */; };
+		6846AE6D2892348500A5AF89 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846AE6C2892348500A5AF89 /* ScheduleModel.swift */; };
+		6871EC912892F66700E9016A /* FormAddJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871EC902892F66700E9016A /* FormAddJourneyView.swift */; };
+		6881BBD82893658900309D52 /* FormDetailJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881BBD72893658900309D52 /* FormDetailJourneyView.swift */; };
 		68C66A562888FC4400C0D8F9 /* BeLanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A552888FC4400C0D8F9 /* BeLanceApp.swift */; };
 		68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C66A572888FC4400C0D8F9 /* ContentView.swift */; };
 		68C66A5A2888FC4600C0D8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C66A592888FC4600C0D8F9 /* Assets.xcassets */; };
@@ -19,12 +25,19 @@
 		68D9FE39288CE73400A36CBB /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE38288CE73400A36CBB /* Typography.swift */; };
 		68D9FE3B288D7F2400A36CBB /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3A288D7F2400A36CBB /* AppUtils.swift */; };
 		68D9FE3D288D8D9700A36CBB /* MyJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */; };
-		68D9FE3F288DA8BA00A36CBB /* DetailJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */; };
+		68D9FE3F288DA8BA00A36CBB /* DetailJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9FE3E288DA8BA00A36CBB /* DetailJourneyView.swift */; };
 		68E10196288EA803001E78B4 /* AddScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E10195288EA803001E78B4 /* AddScheduleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6842C392288E4A52000FF133 /* MyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleView.swift; sourceTree = "<group>"; };
+		6846AE6128915EBD00A5AF89 /* JourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyModel.swift; sourceTree = "<group>"; };
+		6846AE682891765200A5AF89 /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		6846AE6A2892288500A5AF89 /* DetailJourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJourneyModel.swift; sourceTree = "<group>"; };
+		6846AE6C2892348500A5AF89 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		6871EC8F2892DB7A00E9016A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6871EC902892F66700E9016A /* FormAddJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAddJourneyView.swift; sourceTree = "<group>"; };
+		6881BBD72893658900309D52 /* FormDetailJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailJourneyView.swift; sourceTree = "<group>"; };
 		68C66A522888FC4400C0D8F9 /* BeLance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeLance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C66A552888FC4400C0D8F9 /* BeLanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeLanceApp.swift; sourceTree = "<group>"; };
 		68C66A572888FC4400C0D8F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,7 +50,7 @@
 		68D9FE38288CE73400A36CBB /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		68D9FE3A288D7F2400A36CBB /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJourneyView.swift; sourceTree = "<group>"; };
-		68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJourney.swift; sourceTree = "<group>"; };
+		68D9FE3E288DA8BA00A36CBB /* DetailJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJourneyView.swift; sourceTree = "<group>"; };
 		68E10195288EA803001E78B4 /* AddScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6846AE6028915EA000A5AF89 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6846AE6128915EBD00A5AF89 /* JourneyModel.swift */,
+				6846AE6A2892288500A5AF89 /* DetailJourneyModel.swift */,
+				6846AE6C2892348500A5AF89 /* ScheduleModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6871EC922893036E00E9016A /* DetailJourney */ = {
+			isa = PBXGroup;
+			children = (
+				68D9FE3E288DA8BA00A36CBB /* DetailJourneyView.swift */,
+				6881BBD72893658900309D52 /* FormDetailJourneyView.swift */,
+			);
+			path = DetailJourney;
+			sourceTree = "<group>";
+		};
 		68C66A492888FC4400C0D8F9 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +103,8 @@
 		68C66A542888FC4400C0D8F9 /* BeLance */ = {
 			isa = PBXGroup;
 			children = (
+				6871EC8F2892DB7A00E9016A /* Info.plist */,
+				6846AE6028915EA000A5AF89 /* Models */,
 				68C66A6328890EF600C0D8F9 /* Views */,
 				68D9FE35288CE3A400A36CBB /* Utils */,
 				68C66A5B2888FC4600C0D8F9 /* Preview Content */,
@@ -92,10 +126,11 @@
 		68C66A6328890EF600C0D8F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				68C66A6428890F2500C0D8F9 /* DashboardView.swift */,
+				68E10194288EA7DC001E78B4 /* Schedule */,
 				68C66A6628893EEE00C0D8F9 /* Components */,
 				68D9FE40288DAC3D00A36CBB /* Journey */,
-				68E10194288EA7DC001E78B4 /* Schedule */,
-				68C66A6428890F2500C0D8F9 /* DashboardView.swift */,
+				6871EC922893036E00E9016A /* DetailJourney */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +150,7 @@
 			children = (
 				68D9FE36288CE3BE00A36CBB /* UIConst.swift */,
 				68D9FE3A288D7F2400A36CBB /* AppUtils.swift */,
+				6846AE682891765200A5AF89 /* AppConst.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -123,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				68D9FE3C288D8D9700A36CBB /* MyJourneyView.swift */,
-				68D9FE3E288DA8BA00A36CBB /* DetailJourney.swift */,
+				6871EC902892F66700E9016A /* FormAddJourneyView.swift */,
 			);
 			path = Journey;
 			sourceTree = "<group>";
@@ -207,17 +243,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6846AE692891765200A5AF89 /* AppConst.swift in Sources */,
 				68D9FE3D288D8D9700A36CBB /* MyJourneyView.swift in Sources */,
 				68D9FE39288CE73400A36CBB /* Typography.swift in Sources */,
 				68D9FE34288CDE8400A36CBB /* Button.swift in Sources */,
-				68D9FE3F288DA8BA00A36CBB /* DetailJourney.swift in Sources */,
+				68D9FE3F288DA8BA00A36CBB /* DetailJourneyView.swift in Sources */,
+				6846AE6B2892288500A5AF89 /* DetailJourneyModel.swift in Sources */,
 				68D9FE37288CE3BE00A36CBB /* UIConst.swift in Sources */,
 				68E10196288EA803001E78B4 /* AddScheduleView.swift in Sources */,
 				68D9FE3B288D7F2400A36CBB /* AppUtils.swift in Sources */,
 				68C66A582888FC4400C0D8F9 /* ContentView.swift in Sources */,
+				6846AE6228915EBD00A5AF89 /* JourneyModel.swift in Sources */,
 				6842C393288E4A52000FF133 /* MyScheduleView.swift in Sources */,
+				6846AE6D2892348500A5AF89 /* ScheduleModel.swift in Sources */,
 				68C66A6528890F2500C0D8F9 /* DashboardView.swift in Sources */,
 				68C66A6828893F0000C0D8F9 /* GeneralComponents.swift in Sources */,
+				6871EC912892F66700E9016A /* FormAddJourneyView.swift in Sources */,
+				6881BBD82893658900309D52 /* FormDetailJourneyView.swift in Sources */,
 				68C66A562888FC4400C0D8F9 /* BeLanceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,11 +392,13 @@
 				DEVELOPMENT_TEAM = 4H5U92937H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeLance/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,11 +423,13 @@
 				DEVELOPMENT_TEAM = 4H5U92937H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeLance/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,14 +1,33 @@
-//
-//  AddScheduleView.swift
-//  BeLance
-//
-//  Created by Rahmat Afriyanton on 25/07/22.
-//
+	//
+	//  AddScheduleView.swift
+	//  BeLance
+	//
+	//  Created by Rahmat Afriyanton on 25/07/22.
+	//
 
 import SwiftUI
 
 struct AddScheduleView: View {
-	@State private var currentDate = Date()
+	@Binding var isPresented: Bool
+	@Environment(\.presentationMode) var presentationMode
+	@EnvironmentObject var schedules: ScheduleModel
+
+	@State var isAlert = false
+	@State var formData = ["schedule_type": "", "time": ""]
+	@State private var time =  Date()
+
+	@State var buttonTypes = [
+		DefaultButton(
+			text: "Studying",
+			fgColor: Color("dark"),
+			bgColor: Color.white,
+			width: 150),
+		DefaultButton(
+			text: "Working",
+			fgColor: Color("dark"),
+			bgColor: Color.white,
+			width: 150)
+	]	
 	var body: some View {
 		NavigationView {
 			ZStack {
@@ -22,22 +41,13 @@ struct AddScheduleView: View {
 								LabelTextView(text: "Use this time for")
 
 								HStack {
-									Button(action: {print("button tapped")}) {
-										DefaultButton(
-											text: "Studying",
-											fgColor: Color("light"),
-											bgColor: Color("primary"),
-											width: 150)
+									ForEach(0..<buttonTypes.count) { i in
+										Button(action: {
+											setSelectedType(index: i)
+										}) {
+											buttonTypes[i]
+										}
 									}
-
-									Button(action: {print("button tapped")}) {
-										DefaultButton(
-											text: "Studying",
-											fgColor: Color("dark"),
-											bgColor: Color.white,
-											width: 150)
-									}
-
 
 								}
 							}
@@ -45,24 +55,27 @@ struct AddScheduleView: View {
 							VStack(alignment: .leading, spacing: 20) {
 								HStack {
 									VStack(alignment: .leading) {
-										LabelTextView(text: "From")
-										
-										DatePicker("", selection: $currentDate, displayedComponents: [.hourAndMinute])
+										LabelTextView(text: "Time")
+										DatePicker("Select Time", selection: $time, displayedComponents: [.hourAndMinute])
 											.labelsHidden()
-									}
-
-									VStack(alignment: .leading) {
-										LabelTextView(text: "To")
-
-										DatePicker("", selection: $currentDate, displayedComponents: [.hourAndMinute])
-											.labelsHidden()
+											.onChange(of: time) { value in
+												setTime()
+											}
 									}
 
 								}.frame(width: UIConst.maxFrameWidth)
 							}
 						}
 
-						Button(action: {print("button tapped")}) {
+						Button(action: {
+							if (formValidation()) {
+								schedules.createData(params: formData)
+								schedules.fetchData()
+								isPresented.toggle()
+							} else {
+								isAlert.toggle()
+							}
+						}) {
 							DefaultButton(
 								text: "Add Schedule",
 								fgColor: Color("light"),
@@ -70,17 +83,56 @@ struct AddScheduleView: View {
 								width: 324,
 								height: 44)
 						}.padding(.top, 150)
+
 					}
-				}
+				}.alert(isPresented: $isAlert, content: {
+					let title = Text("No Data")
+					let msg = Text("Please fill all the data")
+					return Alert(title: title, message: msg)
+				})
 			}.navigationBarItems(
-				trailing: Button("Cancel", action: {}).foregroundColor(.red).padding(.horizontal)
+				leading: Button("Cancel", action: {
+					presentationMode.wrappedValue.dismiss()
+				}).foregroundColor(Color("secondary"))
 			)
 		}
 	}
+
+	private func setSelectedType(index: Int) {
+		formData["schedule_type"] = buttonTypes[index].text
+
+		buttonTypes[index].bgColor = Color("primary")
+		buttonTypes[index].fgColor = Color("light")
+
+		buttonTypes[index == 1 ? index - 1 : index + 1].bgColor = .white
+		buttonTypes[index == 1 ? index - 1 : index + 1].fgColor = Color("dark")
+
+		print(formData)
+
+	}
+
+	private func setTime() {
+		let selectedtime = time //Here it gets the date
+		let formatter2 = DateFormatter()
+		formatter2.timeStyle = .medium
+			//I have a saved string called newstarttime to use this new variable anywhere in my project.
+		let newstarttime = formatter2.string(from: selectedtime)
+
+		formData["time"] = newstarttime.replacingOccurrences(of: ".", with: ":")
+//		print(formData)
+	}
+
+	private func formValidation() -> Bool {
+		if (formData["time"] != "" && formData["schedule_type"] != "") {
+			return true
+		}
+		return false
+	}
 }
 
-struct AddScheduleView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddScheduleView()
-    }
-}
+//struct AddScheduleView_Previews: PreviewProvider {
+//	@State var isPresented = true
+//	static var previews: some View {
+//		AddScheduleView(isPresented: )
+//	}
+//}

@@ -139,6 +139,57 @@ struct ListCellView: View {
 	}
 }
 
+
+struct JourneyCellView: View {
+	var title: String
+	var body: some View {
+		VStack(alignment: .leading, spacing: 4) {
+
+			Text(title)
+				.font(.headline)
+				.fontWeight(.semibold)
+				.foregroundColor(Color("dark"))
+				.frame(maxWidth: .infinity, alignment: .topLeading)
+				.lineLimit(nil)
+			ZStack(alignment: .leading) {
+				RoundedRectangle (cornerRadius: 15)
+					.fill(Color("secondary"))
+					.frame(width: 310, height: 5)
+
+				RoundedRectangle (cornerRadius: 15)
+					.fill(Color("secondary"))
+					.frame(width: 100, height: 5)
+			}.padding(.top, 5)
+		}.frame(width: UIConst.maxFrameWidth)
+	}
+}
+
+struct DetailJourneyCellView: View {
+	var item: DetailJourney
+	var body: some View {
+		VStack(alignment: .leading, spacing: 4) {
+			Text(item.nama_detail_journey)
+				.font(.headline)
+				.fontWeight(.semibold)
+				.foregroundColor(Color("dark"))
+				.frame(maxWidth: .infinity, alignment: .topLeading)
+				.lineLimit(nil)
+
+			HStack {
+				Text("Current Status")
+					.font(.caption2)
+					.foregroundColor(Color("secondary"))
+				Spacer()
+				Text(item.current_status)
+					.font(.caption2)
+					.fontWeight(.semibold)
+					.foregroundColor(Color("secondary"))
+			}
+		}
+		.padding(.vertical, 10)
+	}
+}
+
 struct ListCellView_Previews: PreviewProvider {
 	static var previews: some View {
 		ListCellView(title: "What is UIKit", withProgressBar: true)
@@ -147,25 +198,34 @@ struct ListCellView_Previews: PreviewProvider {
 
 
 struct TimeScheduleCell: View {
-	var time: String
-	var kind: String
-	@Binding var isSelected: Bool
+	@EnvironmentObject var schedules: ScheduleModel
+
+	@Binding var schedule: Schedule
+	@State var isSelected: Bool
 	var body: some View {
-		Divider().frame(width: UIConst.maxFrameWidth)
 		Toggle(isOn: $isSelected) {
 			VStack(alignment: .leading, spacing: 0) {
-				Text(time)
+				Text(schedule.time.dropLast(3))
 					.fontWeight(.medium)
-					.font(.largeTitle)
+					.font(.title)
 					.foregroundColor(Color("dark"))
 
-				Text(kind)
-					.fontWeight(.medium)
-					.font(.callout)
-					.foregroundColor(Color("dark").opacity(0.75))
+				Text(schedule.schedule_type)
+					.fontWeight(.regular)
+					.font(.subheadline)
+					.foregroundColor(Color("dark").opacity(0.50))
 			}
-		}.frame(width: UIConst.maxFrameWidth)
-			.padding(.horizontal)
+		}.onChange(of: isSelected) { value in
+				self.schedule.is_active = String(isSelected)
+				self.schedule.bool_is_active = isSelected
+
+				let formData = ["is_active": isSelected]
+
+				schedules.updateData(params: formData, id: schedule.schedule_id)
+				schedules.fetchData()
+
+//				ScheduleModel.updateSchedule(schedule: schedule)
+			}
 	}
 }
 

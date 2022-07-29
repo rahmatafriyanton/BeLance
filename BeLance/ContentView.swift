@@ -18,8 +18,8 @@ struct ContentView: View {
 				ZStack {
 					switch selectedTab {
 						case 0 : DashboardView()
-						case 1 : MyJourneyView()
-						case 2 : MyScheduleView()
+						case 1 : MyJourneyView().environmentObject(JourneyModel())
+						case 2 : MyScheduleView().environmentObject(ScheduleModel())
 						default: Text("Page Not Found")
 					}
 				}
